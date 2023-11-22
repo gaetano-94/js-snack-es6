@@ -22,3 +22,8 @@ const biciclettaDaCorsa = [
     peso: 3,
   },
 ];
+
+//trovare la bici con il peso minore
+const biciLeggera = biciclettaDaCorsa.reduce((minBici, bici) =>
+  bici.peso < minBici.peso ? bici : minBici
+);
