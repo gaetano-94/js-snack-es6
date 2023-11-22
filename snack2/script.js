@@ -31,3 +31,9 @@ const squadreDiCalcio = [
     falliSubiti: 0,
   },
 ];
+
+//numeri casuali per punti fatti e falli subiti
+squadreDiCalcio.forEach((squadra) => {
+  squadra.puntiFatti = generaNumeroCasuale(0, 100);
+  squadra.falliSubiti = generaNumeroCasuale(0, 50);
+});
