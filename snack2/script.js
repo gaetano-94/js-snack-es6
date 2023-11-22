@@ -8,6 +8,11 @@ Generare numeri random al posto degli 0 nelle proprietà: Punti fatti e falli su
 Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
 */
 
+//funzione numeri casuali
+function generaNumeroCasuale(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 //array delle squadre
 const squadreDiCalcio = [
   {
