@@ -37,3 +37,15 @@ squadreDiCalcio.forEach((squadra) => {
   squadra.puntiFatti = generaNumeroCasuale(0, 100);
   squadra.falliSubiti = generaNumeroCasuale(0, 50);
 });
+
+//creazione nuovo array solo per nomi e falli subiti
+const squadraConFalli = squadreDiCalcio.map(({ nome, falliSubiti }) => ({
+  nome,
+  falliSubiti,
+}));
+
+//stampo tutto in console
+console.log('Squadre di calcio originali');
+console.log(squadreDiCalcio);
+console.log('Squadra falli subiti');
+console.log(squadraConFalli);
