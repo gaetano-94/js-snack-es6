@@ -23,12 +23,17 @@ const biciclettaDaCorsa = [
   },
 ];
 
+let biciLeggera = biciclettaDaCorsa[0];
+
 //trovare la bici con il peso minore
-const { nome, peso } = biciclettaDaCorsa.reduce(
-  (min, bici) => (bici.peso < min.peso ? bici : min),
-  biciclettaDaCorsa[0]
-);
+for (let i = 1; i < biciclettaDaCorsa.length; i++) {
+  const biciAttuale = biciclettaDaCorsa[i];
+
+  if (biciAttuale.peso < biciLeggera.peso) {
+    biciLeggera = biciAttuale;
+  }
+}
 
 //stampare la bici piu leggera sul DOM
 const output = document.getElementById('output');
-output.innerHTML = `La bici piu leggera e ${nome} con un peso di ${peso} kg`;
+output.innerHTML = `La bici piu leggera e ${biciLeggera.nome} con un peso di ${biciLeggera.peso} kg`;
