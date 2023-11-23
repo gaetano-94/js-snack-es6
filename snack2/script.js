@@ -33,19 +33,20 @@ const squadreDiCalcio = [
 ];
 
 //numeri casuali per punti fatti e falli subiti
-squadreDiCalcio.forEach((squadra) => {
-  squadra.puntiFatti = generaNumeroCasuale(0, 100);
-  squadra.falliSubiti = generaNumeroCasuale(0, 50);
-});
+for (let i = 0; i < squadreDiCalcio.length; i++) {
+  squadreDiCalcio[i].puntiFatti = generaNumeroCasuale(1, 100);
+  squadreDiCalcio[i].falliSubiti = generaNumeroCasuale(1, 50);
+}
 
 //creazione nuovo array solo per nomi e falli subiti
-const squadraConFalli = squadreDiCalcio.map(({ nome, falliSubiti }) => ({
-  nome,
-  falliSubiti,
-}));
+const nuovoArraySquadra = [];
+for (let i = 0; i < squadreDiCalcio.length; i++) {
+  const { nome, falliSubiti } = squadreDiCalcio[i];
+  nuovoArraySquadra.push({ nome, falliSubiti });
+}
 
 //stampo tutto in console
 console.log('Squadre di calcio originali');
 console.log(squadreDiCalcio);
 console.log('Squadra falli subiti');
-console.log(squadraConFalli);
+console.log(nuovoArraySquadra);
